@@ -1,0 +1,25 @@
+Posibles TADs (Tipos Abstractos de Datos)
+
+    Cliente
+    Compra
+    HistorialCompras
+
+TAD TecnoShop
+    Datos: clientes: Conjunto(Cliente),
+    Operaciones: consultarHistorial(idCliente)
+                 consultarTotalCompras(idCliente)
+                 mostrarInfoCliente(idCliente)
+    IREP: el id de cliente no debe repetirse en el conjunto de clientes,
+
+    las busquedas debe ser eficientes en O(1)
+
+
+TAD Cliente:
+    Datos: id, nombre, historialCompras
+    Operaciones: consultarHistorial(), consultarTotalCompras(),
+                 mostrarInfo()
+    IREP: id no nulo
+
+TAD Compras:
+    Datos: id, nombre producto, fechaCompra, importe, cantidad
+    IREP: id no nulo, importe >= 0, cantidad > 0

@@ -6,6 +6,9 @@ public class App
 {
     public static void main( String[] args )
     {
+        Cliente cliente = new Cliente("Carlos", null);
+
+        /*
         List<String> nombres = new ArrayList<>();
         nombres.add("Carlos");
         nombres.add("Pedro");
@@ -38,7 +41,7 @@ public class App
         System.out.println(contadorNombres.entrySet().stream().filter(e -> e.getValue() > 1)
                 .mapToInt(Map.Entry::getValue).sum());
 
-
+        */
 
         /*
         Deque<String> deque = new ArrayDeque<>(20);
