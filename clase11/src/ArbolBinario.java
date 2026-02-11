@@ -1,11 +1,26 @@
 import java.util.Random;
 
-public class ArbolBinario<T> implements  iArbolBinarioTDA<T>{
+public class ArbolBinario<T extends Comparable<T>> implements  iArbolBinarioTDA<T>{
     Nodo<T> raiz;
     static Random random = new Random();
     @Override
     public void crearArbol() {
         this.raiz = null;
+    }
+
+    public T maximaHojas() {
+        //recorrer el arbol y devolver la maxima hoja
+        return maximaHojas(raiz);    
+    }
+
+    private T maximaHojas(Nodo<T> nodo) {
+        if(nodo == null) return null;
+        if(nodo.izq == null && nodo.der == null) return nodo.elemento;
+        T maxIzq = maximaHojas(nodo.izq);
+        T maxDer = maximaHojas(nodo.der);
+        if(maxIzq == null) return maxDer;
+        if(maxDer == null) return maxIzq;
+        return maxIzq.compareTo(maxDer) > 0 ? maxIzq : maxDer;
     }
 
     @Override

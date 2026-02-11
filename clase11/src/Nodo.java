@@ -1,4 +1,4 @@
-public class Nodo<T> {
+public class Nodo<T extends Comparable<T>> {
     T elemento;
     Nodo<T> izq;
     Nodo<T> der;

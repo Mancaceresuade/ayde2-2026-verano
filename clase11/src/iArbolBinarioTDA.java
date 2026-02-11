@@ -4,4 +4,5 @@ public interface iArbolBinarioTDA<T> {
     void imprimir();
     boolean estaVacio();
     void elimar(T elemento);
+    public T maximaHojas();
 }

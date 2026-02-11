@@ -16,7 +16,7 @@ public class App {
         arbolBinario.agregarElemento(30);
         arbolBinario.agregarElemento(5);
         arbolBinario.imprimir();
-
+        System.out.println("Maxima hoja " + arbolBinario.maximaHojas());
         // System.out.println(App.factorialRec(5)); // 5*4*3*2*1 = 120
         // int[] numeros = {4,5,6,7}; // 22
         //System.out.println("Suma recursiva "+ sumaRec2(numeros,numeros.length-1));
