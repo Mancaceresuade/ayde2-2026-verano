@@ -1,8 +1,16 @@
 public class App {
     public static void main(String[] args) throws Exception {
+        ArbolBinario<Integer> arbolBinario = new ArbolBinario<>();
+        // System.out.println(arbolBinario.estaVacio());
+        arbolBinario.estaVacio();
+        arbolBinario.agregarElemento(12);
+        arbolBinario.agregarElemento(10);
+        arbolBinario.agregarElemento(4);
+        arbolBinario.imprimir();
+
         // System.out.println(App.factorialRec(5)); // 5*4*3*2*1 = 120
-        int[] numeros = {4,5,6,7}; // 22
-        System.out.println("Suma recursiva "+ sumaRec2(numeros,numeros.length-1));
+        // int[] numeros = {4,5,6,7}; // 22
+        //System.out.println("Suma recursiva "+ sumaRec2(numeros,numeros.length-1));
     }
 
     private static int sumaRec(int[] numeros, int i) {
