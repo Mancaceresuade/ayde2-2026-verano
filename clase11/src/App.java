@@ -1,11 +1,20 @@
+import java.util.Set;
+import java.util.TreeSet;
+
 public class App {
     public static void main(String[] args) throws Exception {
+
+        // Set<Integer> conjunto = new TreeSet<>();
+
         ArbolBinario<Integer> arbolBinario = new ArbolBinario<>();
         // System.out.println(arbolBinario.estaVacio());
         arbolBinario.estaVacio();
         arbolBinario.agregarElemento(12);
         arbolBinario.agregarElemento(10);
         arbolBinario.agregarElemento(4);
+        arbolBinario.agregarElemento(20);
+        arbolBinario.agregarElemento(30);
+        arbolBinario.agregarElemento(5);
         arbolBinario.imprimir();
 
         // System.out.println(App.factorialRec(5)); // 5*4*3*2*1 = 120

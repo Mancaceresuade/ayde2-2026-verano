@@ -11,32 +11,48 @@ public class ArbolBinario<T> implements  iArbolBinarioTDA<T>{
     @Override
     public void agregarElemento(T elemento) {
         if(this.estaVacio()) {
-            this.raiz= new Nodo<>(elemento);
+            this.raiz = new Nodo<>(elemento);
         } else {
-            if (raiz.izq == null && raiz.der == null) {
-                int aux = random.nextInt(2);
-                if (aux == 0)
-                    raiz.izq = new Nodo<>(elemento);
-                else {
-                    raiz.der = new Nodo<>(elemento);
-                }
-            }
-            if (raiz.izq == null) {
-                raiz.izq = new Nodo<>(elemento);
-            } else if (raiz.der == null) raiz.der = new Nodo<>(elemento);
-            
-
+            agregarElemento(raiz, elemento);
         }
+    }
 
+    private void agregarElemento(Nodo<T> nodo, T elemento) {
+        if(nodo.izq == null) {
+            nodo.izq = new Nodo<>(elemento);
+        } else if (nodo.der == null) {
+            nodo.der = new Nodo<>(elemento);
+        } else {
+            if(random.nextBoolean()) {
+                agregarElemento(nodo.izq, elemento);
+            } else {
+                agregarElemento(nodo.der, elemento);
+            }
+        }
     }
 
     @Override
     public void imprimir() {
+        if(this.estaVacio()) return;
+        imprimir(raiz);
+        /*
         if(!this.estaVacio()) {
             System.out.println("Raiz "+ this.raiz);
             if(raiz.izq != null) System.out.println("izq " + raiz.izq);
             if(raiz.der != null) System.out.println("der " + raiz.der);
+            if(raiz.izq != null) System.out.println("izq " + raiz.izq);
+            if(raiz.der != null) System.out.println("der " + raiz.der);
+            if(raiz.izq != null) System.out.println("izq " + raiz.izq);
+            if(raiz.der != null) System.out.println("der " + raiz.der);
         }
+             */
+    }
+
+    private void imprimir(Nodo<T> nodo) {
+        if(nodo == null) return;
+        imprimir(nodo.izq);
+        System.out.println(nodo.elemento.toString());
+        imprimir(nodo.der);
     }
 
     @Override
