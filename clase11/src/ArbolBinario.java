@@ -23,6 +23,47 @@ public class ArbolBinario<T extends Comparable<T>> implements  iArbolBinarioTDA<
         return maxIzq.compareTo(maxDer) > 0 ? maxIzq : maxDer;
     }
 
+    public int longitudDeLaRamaMasCorta() {
+        return longitudDeLaRamaMasCorta(raiz);
+    }
+
+    private int longitudDeLaRamaMasCorta(Nodo<T> nodo) {
+        if(nodo == null) return 0;
+        return 1 + Math.min(longitudDeLaRamaMasCorta(nodo.izq), longitudDeLaRamaMasCorta(nodo.der));
+    }
+
+    // Cambiar el nodo actual con el mayor valor de sus hijos, siempre que ambos
+    // no sean nulos. Si son nulos o alguno de los dos es nulo no hace nada.
+
+    public void cambiarNodoActualConElMayorValorDeSusHijos() {
+        cambiarNodoActualConElMayorValorDeSusHijos(raiz);
+    }
+
+    private void cambiarNodoActualConElMayorValorDeSusHijos(Nodo<T> nodo) {
+        if(nodo == null) return;
+        if(nodo.izq == null && nodo.der == null) return;
+        if(nodo.izq == null) {
+            nodo.elemento = nodo.der.elemento;
+            nodo.der = null;
+        } else if (nodo.der == null) {
+            nodo.elemento = nodo.izq.elemento;
+            nodo.izq = null;
+        } else {
+            T maxIzq = maximaHojas(nodo.izq);
+            T maxDer = maximaHojas(nodo.der);
+            if(maxIzq.compareTo(maxDer) > 0) {
+                nodo.elemento = maxIzq;
+                nodo.izq = null;
+            } else {
+                nodo.elemento = maxDer;
+                nodo.der = null;
+            }
+        }
+    }
+
+
+
+
     @Override
     public void agregarElemento(T elemento) {
         if(this.estaVacio()) {
