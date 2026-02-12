@@ -107,8 +107,8 @@ public class ArbolBinario<T extends Comparable<T>> implements  iArbolBinarioTDA<
     private void imprimir(Nodo<T> nodo) {
         if(nodo == null) return;
         imprimir(nodo.izq);
-        System.out.println(nodo.elemento.toString());
         imprimir(nodo.der);
+        System.out.println(nodo.elemento.toString());
     }
 
     @Override
