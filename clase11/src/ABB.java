@@ -11,6 +11,18 @@ public class ABB<T extends Comparable<T>> implements iArbolBinarioTDA<T> {
         arbolBinario.crearArbol();
     }
 
+    public T maximo() {
+        return maximo(arbolBinario.raiz);
+    }
+
+    private T maximo(Nodo<T> nodo) {
+        if(nodo == null) return null;
+        if(nodo.der == null) return nodo.elemento;
+        return maximo(nodo.der );
+    }
+
+
+
     @Override
     public void agregarElemento(T elemento) {
         arbolBinario.raiz = agregar(arbolBinario.raiz, elemento);

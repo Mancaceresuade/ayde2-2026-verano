@@ -5,13 +5,14 @@ public class EjemploClase11 {
         abb.agregarElemento(1);
         abb.agregarElemento(2);
         abb.agregarElemento(3);
-        abb.agregarElemento(4);
+        abb.agregarElemento(40);
         abb.agregarElemento(5);
         abb.agregarElemento(6);
         abb.agregarElemento(7);
         abb.agregarElemento(8);
         abb.agregarElemento(9);
         abb.imprimir();
+        System.out.println("Maximo " + abb.maximo());
 
     }
 }
