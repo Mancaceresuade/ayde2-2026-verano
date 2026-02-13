@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class ArbolBinario<T extends Comparable<T>> implements  iArbolBinarioTDA<T>{
@@ -121,5 +123,32 @@ public class ArbolBinario<T extends Comparable<T>> implements  iArbolBinarioTDA<
 
     }
 
+    public List<T> nodosEnNivel(int nivel) {
+        ArrayList<T> lista = new java.util.ArrayList<>();
+        nodosEnNivel(raiz, nivel, 0, lista);
+        return lista;
+    }
 
+    private void nodosEnNivel(Nodo<T> nodo, int nivel, int nivelActual, ArrayList<T> lista) {
+        if(nodo == null) return;
+        if(nivelActual == nivel) {
+            lista.add(nodo.elemento);
+        }
+        nodosEnNivel(nodo.izq, nivel, nivelActual + 1,lista);
+        nodosEnNivel(nodo.der, nivel, nivelActual + 1,lista);
+
+    }
+
+
+
+
+
+    public int altura() {
+        return altura(raiz);
+    }
+
+    private int altura(Nodo<T> n) {
+        if (n == null) return 0;
+        return 1 + Math.max(altura(n.izq), altura(n.der));
+    }
 }
