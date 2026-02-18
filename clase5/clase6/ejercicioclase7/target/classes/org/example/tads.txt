@@ -1,0 +1,10 @@
+Posibles TAD:
+FastTrack
+    datos: clientes (diccionario), envios (diccionario)
+Cliente
+    datos: dni,nombre,email
+Envio
+    datos: id, fechaInicio, peso , distancia, idCliente, tipo, eventos (pila)
+    operaciones: calcularCosto()
+Evento
+    datos: fecha, descripcion, estado {deposito,en camino, entregado}
