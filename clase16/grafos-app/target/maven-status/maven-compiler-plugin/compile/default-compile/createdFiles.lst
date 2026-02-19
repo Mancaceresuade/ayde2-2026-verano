@@ -1,0 +1,4 @@
+com\testgrafos\App.class
+com\testgrafos\tda\IGrafoTDA.class
+com\testgrafos\tda\GrafoMatrizAdyacencia.class
+com\testgrafos\tda\GrafoListaAdyacencia.class
